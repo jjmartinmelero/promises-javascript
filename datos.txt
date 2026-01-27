@@ -1,0 +1,2 @@
+¡Hola! Este es el contenido del archivo datos.txt.
+Esto es una prueba de lectura de archivos asíncrona.
