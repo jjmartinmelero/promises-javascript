@@ -7,6 +7,12 @@ promesaRechazada.catch((err) =>
 );
 console.log(promesaRechazada); // Promise { <rejected>: "Error" }
 
+function addEmojis(mensaje) {
+  return new Promise((resolve, reject) => {
+    resolve(`${mensaje} 😊`);
+  });
+}
+
 // Example to create a promise
 function promiseFriendship() {
   return new Promise((resolve, reject) => {
@@ -20,4 +26,8 @@ function promiseFriendship() {
 
 const response = promiseFriendship();
 
-response.then((res) => console.log(res)).catch((error) => console.error(error));
+response
+  .then((res) => addEmojis(res))
+  .then((message) => console.log(message))
+  .catch((error) => console.error(error))
+  .finally(() => console.log("finally promise"));
